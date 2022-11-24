@@ -2,6 +2,9 @@ import { LightningElement } from 'lwc';
 
 export default class NoHandler extends LightningElement {
     handleClick() {
-        this.dispatchEvent(new CustomEvent('toggle'));
+        this.dispatchEvent(new CustomEvent('toggle', {
+            composed: true,
+            bubbles: true
+        }));
     }
 }
